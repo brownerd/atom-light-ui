@@ -1,7 +1,6 @@
 @import "ui-variables";
-@tab-radius: 3px;
+
 @modified-icon-width: 8px;
-@tab-skew: 30deg;
 @tab-top-padding: 5px;
 @tab-bottom-border-height: 5px;
 @tab-border: 1px solid @tab-border-color;
@@ -9,9 +8,8 @@
 
 .tab-bar {
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
-  background-image: -webkit-linear-gradient(top, @tab-bar-background-color, lighten(@tab-bar-background-color, 9%));
-  box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
-  padding: 0 10px 0 25px;
+  box-shadow: inset 0 -8px 0 rgba(100,100,100, .1);
+  padding: 0 10px 0 0;
   overflow-x: auto;
   overflow-y: hidden;
 
@@ -46,7 +44,6 @@
     transition: color .1s ease-in;
 
     &, &:before, &:after {
-      background-image: -webkit-linear-gradient(top, @tab-background-color, darken(@tab-background-color, 6%));
       border-top: @tab-border;
     }
 
@@ -61,19 +58,15 @@
     // left angled edge
     &:before {
       left: -14px;
-      border-top-left-radius: @tab-radius;
       border-left: @tab-border;
       box-shadow: inset 1px -1px 1px rgba(0,0,0, .05);
-      -webkit-transform: skewX(-@tab-skew);
     }
 
     // right angled edge
     &:after {
       right: -14px;
-      border-top-right-radius: @tab-radius;
       border-right: @tab-border;
       box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
-      -webkit-transform: skewX(@tab-skew);
     }
 
     .close-icon {

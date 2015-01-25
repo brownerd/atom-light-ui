@@ -1,9 +1,9 @@
 {
-  "name": "atom-light-ui",
+  "name": "brownerd-ui",
   "theme": "ui",
-  "version": "0.40.0",
-  "description": "Default light theme for interface components",
-  "repository": "https://github.com/atom/atom-light-ui.git",
+  "version": "0.1.0",
+  "description": "Mininal theme.",
+  "repository": "https://github.com/brownerd/brownerd-ui",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
