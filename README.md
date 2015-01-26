@@ -16,4 +16,4 @@ This is a minimal syntax that uses typography instead of coloring.
 
 
 ## Resources
-I orignally forked [Seti UI](https://github.com/jesseweed/seti-ui), but it broke in the lastest version of Atom. I then generated the forked the light-ui from Atom. This UI is a customization of both.
+I orignally forked [Seti UI](https://github.com/jesseweed/seti-ui), but it broke in the lastest version of Atom. I then forked the light-ui from Atom. This UI is a customization of both.
