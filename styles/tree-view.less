@@ -1,5 +1,7 @@
 @import "ui-variables";
 
+
+/*
 .tree-view {
 	font-size: @font-size;
 	background: @tree-view-background-color;
@@ -36,4 +38,89 @@
 			color: #fff !important;
 		}
 	}
+}
+*/
+
+
+
+
+
+.tree-view-resizer {
+	//box-shadow: 1px 0 100px fade(@charcoal, 70%);
+}
+
+.tree-view {
+	font-size: @font-size;
+	background: @tree-view-background-color !important;
+
+	.selected {
+		// padding: 20px;
+	}
+	.selected:before { // Folder selection BG color
+		background: @master-accent; //lighten(@master-accent, 50%)
+		box-shadow: none;
+		// padding: 20px;
+	}
+}
+
+
+.focusable-panel {
+	opacity: 1;
+	background: @charcoal;
+	box-shadow: none;
+	border: 0;
+
+	&:focus {
+		background: @charcoal;
+
+		.selected:before {
+			background: @master-accent;
+		}
+
+		.selected > .name,
+		.selected > .name:before,
+		.selected > .list-item > .name,
+		.selected > .list-item > .name:before {
+			color: @charcoal;
+		}
+	}
+}
+
+
+.file-list-view, .list-view {
+	background: @black;
+	color: @white;
+	padding: 10px;
+
+	.file.selected {
+		.filename {
+			background: @charcoal;
+		}
+		color: @white;
+	}
+
+	.selected {
+		text-shadow: none;
+		background: @charcoal;
+	}
+
+	.selected:before {
+		background: @master-accent;
+	}
+
+}
+
+.list-tree li:not(.list-nested-item) { // text color for filenames in tree-view
+	color: @tree-filename-color;
+	font-weight: @extra-light;
+}
+
+.list-tree li.list-nested-item > .list-item {
+	color: @charcoal;
+	font-weight: @bold;
+}
+
+
+.list-tree li:not(.list-nested-item).selected {
+	color: @charcoal;
 }

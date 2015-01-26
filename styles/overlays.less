@@ -1,34 +1,25 @@
 @import "ui-variables";
 
-atom-panel.modal, .overlay {
+.overlay {
   color: @text-color;
   background-color: @overlay-background-color;
   padding: @component-padding;
-  border: 1px solid @overlay-border-color;
-  box-shadow: 0 0 10px @base-border-color;
-  border-radius: @component-border-radius;
+  box-shadow: 1em 1em 0 fade(@charcoal, 50%);
 
-  atom-text-editor[mini] {
+  .editor.mini {
     margin-bottom: @component-padding;
   }
 
   .select-list ol.list-group,
   &.select-list ol.list-group {
 
-    background-color: @inset-panel-background-color;
+    background-color: @overlay-background-color;
 
     li {
       padding: @component-padding;
-      border-top: 1px solid @inset-panel-border-color;
-      border-left: 1px solid @inset-panel-border-color;
-      border-right: 1px solid @inset-panel-border-color;
-      &:last-child { border-bottom: 1px solid @inset-panel-border-color; }
+      border-bottom: 1px solid @overlay-background-color;
 
       &.two-lines { padding: @component-padding/2 @component-padding; }
-      &.selected {
-        color: @text-color;
-        background-color: @background-color-highlight;
-      }
 
       .status.icon {
         float: right;
@@ -37,7 +28,19 @@ atom-panel.modal, .overlay {
           margin-right: 0;
         }
       }
-    }
 
+      &.selected {
+        .status.icon {
+          color: @text-color-selected;
+        }
+      }
+    }
   }
+}
+
+.key-binding {
+  background-color: @master-accent !important;
+  //border: 1px solid @master-accent;
+  font-family: 'source code pro', sans-serif;
+  color: @charcoal;
 }

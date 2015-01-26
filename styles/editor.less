@@ -1,37 +1,95 @@
 @import "ui-variables";
 @import "ui-mixins";
 
-atom-text-editor[mini], atom-text-editor[mini]::shadow {
-  color: lighten(@text-color, 15%);
-  background-color: darken(@input-background-color, 1%);
-  border: 1px solid lighten(@input-border-color, 10%);
 
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+span.highlight {
+  background-color: lighten(@charcoal, 10%);
+}
+
+.editor .gutter .line-number.git-line-ignored {
+  border-color: @color-status-ignored;
+  opacity: 1;
+}
+
+.editor .gutter .line-number.git-line-added {
+  border-color: @color-status-added;
+  opacity: 1;
+}
+
+.editor .gutter .line-number.git-line-renamed {
+  border-color: @color-status-renamed;
+  opacity: 1;
+}
+
+.editor .gutter .line-number.git-line-modified {
+  border-color: @color-status-modified;
+  opacity: 1;
+}
+
+.editor .gutter .line-number.git-line-removed {
+  border-color: @color-status-removed;
+  opacity: 1;
+}
+
+.editor.mini {
+  color: @input-text-color;
+  background-color: @input-background-color-selected;
+  border: 1px solid @input-border-color;
+  box-shadow: none;
   border-radius: @component-border-radius;
   padding-left: @component-padding/2;
 
-  .cursor { border-color: #000; }
-  .selection .region { background-color: rgba(0, 0, 0, .2); }
-  .placeholder-text {
-    color: lighten(@text-color-subtle, 10%);
-  }
+  .cursor { border-color: @input-text-color; }
+  .selection .region { background-color: darken(@input-background-color, 10%); }
 }
 
-atom-text-editor[mini].is-focused, atom-text-editor[mini].is-focused::shadow {
-  color: @text-color;
+.editor.editor-colors.mini.is-focused {
   background-color: @input-background-color;
-  border-color: @input-border-color;
-  .placeholder-text {
-    color: @text-color-subtle;
-  }
-  .selection .region {
-    background-color: lighten(@background-color-info, 30%);
-  }
+  color: @input-text-color-selected;
+  .selection .region { background-color: desaturate(@background-color-info, 50%); }
 }
 
 // FIXME: these should go in syntax themes?
-atom-text-editor, atom-text-editor::shadow {
-  .gutter.drop-shadow {
-    -webkit-box-shadow: -2px 0 10px 2px #222;
+.editor .gutter.drop-shadow {
+  -webkit-box-shadow: -2px 0 10px 2px @charcoal;
+}
+
+@-webkit-keyframes highlight {
+  from { background-color: fade(@master-accent, 30%); } //.07
+  to { background-color: null; }
+}
+
+.editor .highlighted.selection .region {
+  -webkit-animation-name: highlight;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+}
+
+.select-list.command-palette.overlay.from-top {
+  .error-message {
+    padding: 3px 0px 0px 6px;
   }
+
+  .editor.editor-colors.mini.is-focused {
+    padding: 1px;
+  }
+}
+
+
+// Random settings
+// On settings sidebar
+.settings-view .config-menu .nav > li.active > a,
+
+// Input text on settings page
+.settings-view select.form-control,
+// Open / atom
+.settings-view .config-menu .button-area > .btn,
+// Hover
+.settings-view .config-menu .nav > li > a:hover {
+  color: @charcoal !important;
+}
+
+.settings-view input[type="checkbox"],
+.settings-view input[type="checkbox"]:checked {
+  background-color: @master-accent;
 }

@@ -1,87 +1,206 @@
 // Colors
 
-@text-color: #444;
-@text-color-subtle: #999;
-@text-color-highlight: #000;
-@text-color-selected: #fff;
+/*
+Less color functions
+lighten(@color, 20%)
+darken(@color, 20%)
+saturate()
+desaturate()
+fadein()
+fadeout()
+fade(@blue, 20%) for transparency
+spin(@color, 123)
+mix(@blue, @yellow, 50%)
+*/
 
-@text-color-info: #5293d8;
-@text-color-success: #529b2f;
-@text-color-warning: #ff982d;
-@text-color-error: #c00;
+// Font
+@extra-light: 200;
+@light: 300;
+@normal: 400;
+@medium: 500;
+@semi-bold: 600;
+@bold: 700;
+@ultra-bold: 900;
+
+// Base Colors
+@white: #fff;
+@black: #000;
+@charcoal: #333;
+@graphite: #ccc;
+@silver: #f5f5f5;
+@chocolate: #534741;
+@zdirt: #998675;
+@dust: #e8e8e2;
+
+// Colors from http://clrs.cc/
+@navy: #001F3F;
+@blue: #0074D9;
+@aqua: #7FDBFF;
+@teal: #39CCCC;
+@olive: #3D9970;
+@green: #2ECC40;
+@slime: #01FF70;
+@yellow: #FFDC00;
+@orange: #FF851B;
+@red: #FF4136;
+@maroon: #85144B;
+@fuchsia: #F012BE;
+@purple: #B10DC9;
+@wintermint: #0FA;
+
+
+@master-accent: @yellow;
+
+
+@background: @silver;
+@text: @charcoal;
+
+@ui-site-color-1: @aqua;
+@ui-site-color-2: @green;
+@ui-site-color-3: @purple;
+@ui-site-color-4: @red;
+@ui-site-color-5: @fuchsia;
+
+@text-color-info: @aqua;
+@text-color-success: @master-accent;
+@text-color-warning: @fuchsia;
+@text-color-error: @red;
+
+@background-color-info: @aqua;
+@background-color-success: @green;
+@background-color-warning: @fuchsia;
+@background-color-error: @red;
+@background-color-highlight: @master-accent;
+@background-color-selected: @master-accent;
+
+@app-background-color: @background;
+
+
+
+// FONT COLORS
+@text-color: @graphite;
+@text-color-subtle: @master-accent; // Search replace text
+@text-color-highlight: @master-accent; //Tab text color // auto-complete text // search hover
+@text-color-selected: @text-color-highlight;
 
 @text-color-ignored: @text-color-subtle;
-@text-color-added: @text-color-success;
+@text-color-added: @white; //@text-color-success;
 @text-color-renamed: @text-color-info;
 @text-color-modified: @text-color-warning;
 @text-color-removed: @text-color-error;
 
-@background-color-info: #0098ff;
-@background-color-success: #17ca65;
-@background-color-warning: #ff4800;
-@background-color-error: #c00;
-@background-color-highlight: rgba(0, 0, 0, .1);
-@background-color-selected: #6aa5e9;
+@color-status-ignored:@text-color-subtle;
+@color-status-added: @text-color-added;
+@color-status-renamed: @text-color-info;
+@color-status-modified: @text-color-warning;
+@color-status-removed: @text-color-error;
 
-@app-background-color: #ccc;
 
-@base-background-color: #f4f4f4;
-@base-border-color: #9f9f9f;
+
+
+
+
+// BUTTONS (Search buttons)
+@button-background-color: @master-accent;
+@button-text-color: @charcoal;
+@button-background-color-hover: darken(@master-accent, 25%);
+@button-background-color-selected: @graphite;
+@button-border-color: @base-border-color;
+
+
+
+
+// TREE VIEW / SIDEBAR
+@tree-view-background-color: @graphite; //Sidebar Background
+@tree-view-border-color: @tool-panel-border-color;
+@tree-foldername-color: @charcoal;
+@tree-foldericon-color: @charcoal;
+@tree-filename-color: @charcoal;
+@tree-filename-icon-color: @charcoal;
+
+@scrollbar-background-color: @graphite; // fade(@graphite, 50%);  // (not sure what these are yet)
+@scrollbar-color: @graphite; //fade(@graphite, 50%);
+
+
+
+// OVERLAYS (not sure what these are yet)
+@overlay-background-color: @charcoal; // Like when you press cmd P
+@overlay-border-color: @background-color-highlight;
+@overlay-text-color: @text-color;
+@overlay-selected-bg: lighten(@red, 50%);
+@overlay-selected-text: darken(@text-color, 15%);
+
+@overlay-key-binding: @overlay-selected-bg;
+@overlay-key-binding-text: @overlay-selected-text;
+@overlay-key-binding-highlight-text: @overlay-selected-text;
+@overlay-key-binding-highlight: @overlay-background-color;
+
+
+// PANELS (Search panel)
+@panel-bg: @charcoal;
+@panel-border: @black;
+
+// TABS (not sure what these are yet)
+@tab-border: none;
+@tab-height: 35px;
+@tab-top-padding: 0px;
+@tab-bottom-border-height: 0px;
+@tab-highlight-color: @blue;
+
+@tab-background: @charcoal;
+@tab-background-active: @charcoal;
+@tab-background-color-active: @charcoal;
+
+@tab-border-color: @purple;
+
+@tab-bar-background-color: @graphite;
+@tab-bar-bottom-border-color: @silver;
+
+@tab-text-color: @white;
+@tab-text-highlight-color: @blue;
+
+@modified-icon-width: 8px;
+
+
+// MISC
+@base-background-color: lighten(@tool-panel-background-color, 5%);
+@base-border-color: fade(@black, 50%);
 
 @pane-item-background-color: @base-background-color;
-@pane-item-border-color: @base-border-color;
+@pane-item-border-color: fade(@black, 50%);
 
-@input-background-color: white;
-@input-border-color: fadeout(@base-border-color, 10%);
+@input-background-color: fade(@master-accent, 25%); // Searh bar inputs
+@input-background-color-selected: fade(@white, 10%);
+@input-font-size: 14px;
+@input-text-color: @white;
+@input-text-color-selected: @master-accent;
+@input-border-color: @charcoal;
 
-@tool-panel-background-color: @base-background-color;
+@tool-panel-background-color: @charcoal; // Divider between directory list and line numbers
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: #fff;
-@inset-panel-border-color: fadeout(@base-border-color, 10%);
+@inset-panel-background-color: @graphite;
+@inset-panel-border-color: @base-border-color;
 
-@panel-heading-background-color: #c3c3c3;
-@panel-heading-border-color: transparent;
+@panel-heading-background-color: @charcoal;
+@panel-heading-border-color: fadein(@base-border-color, 10%);
 
-@overlay-background-color: #ececec;
-@overlay-border-color: @base-border-color;
 
-@button-background-color: @base-background-color;
-@button-background-color-hover: lighten(@button-background-color, 5%);
-@button-background-color-selected: #888;
-@button-border-color: rgba(0, 0, 0, 0.15);
-
-@tab-bar-background-color: #d8d8d8;
-@tab-bar-border-color: #ddd;
-@tab-background-color: #e8e8e8;
-@tab-background-color-active: #f0f0f0;
-@tab-border-color: lighten(@base-border-color, 10%);
-
-@tree-view-background-color: #eee;
-@tree-view-border-color: @base-border-color;
-
-@ui-site-color-1: @background-color-success; // green
-@ui-site-color-2: @background-color-info; // blue
-@ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #db2ff4; // purple
-@ui-site-color-5: #f5e11d; // yellow
 
 
 // Sizes
-
-@font-size: 11px;
-@input-font-size: 14px;
+@font-size: 12px;
 @disclosure-arrow-size: 12px;
-
-@component-padding: 10px;
+@component-padding: 1rem;
 @component-icon-padding: 5px;
 @component-icon-size: 16px;
 @component-line-height: 25px;
-@component-border-radius: 2px;
+@component-border-radius: 0;
 
-@tab-height: 26px;
+
+
 
 
 // Other
 
-@font-family: 'Lucida Grande', 'Segoe UI', sans-serif;
+@font-family: 'source code pro', sans-serif;

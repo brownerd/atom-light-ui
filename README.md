@@ -1,9 +1,19 @@
-# Atom Light UI theme
+# Brownerd UI
 
-Default light UI theme for Atom.
+This is a minimal syntax that uses typography instead of coloring.
 
-This theme is installed by default with Atom and can be activated by going to
-the _Themes_ section in the Settings view (`cmd-,`) and selecting it from the
-_UI Themes_ drop-down menu.
+*- This is a light syntax theme for Atom*
 
-![](https://f.cloud.github.com/assets/671378/2265022/bb148a20-9e7a-11e3-81c8-bf5965d48183.png)
+## Dependencies
+
+1. [Source Code Pro font](http://store1.adobe.com/cfusion/store/html/index.cfm?event=displayFontPackage&code=1960). For best results, use Source Code Pro.
+2. [File Icons](https://atom.io/packages/file-icons)
+
+
+## Screenshots
+![Screenshot](https://github.com/brownerd/brownerd-ui/raw/master/screenshot.png)
+![Screenshot 2](https://github.com/brownerd/brownerd-ui/raw/master/screenshot-2.png)
+
+
+## Resources
+I orignally forked [Seti UI](https://github.com/jesseweed/seti-ui), but it broke in the lastest version of Atom. I then generated the forked the light-ui from Atom. This UI is a customization of both.
