@@ -13,9 +13,9 @@
   &.selected,
   &.selected:hover {
     color: @text-color-highlight;
-    background-color: @selected-color;
+    background-color: darken(@master-accent, 20%); // @selected-color;
     &:hover {
-      background-color: @selected-color;
+      background-color: darken(@master-accent, 20%); // @selected-color;
     }
   }
 }
@@ -59,7 +59,7 @@ button.btn.option-selection {
   .btn-variant(@background-color-info);
 }
 .btn.btn-info {
-  .btn-variant(@background-color-info);
+  background-color: @master-accent;
 }
 .btn.btn-success {
   .btn-variant(@background-color-success);
@@ -74,4 +74,13 @@ button.btn.option-selection {
 .caret {
   border-top: 5px solid #fff;
   margin-top: -1px;
+}
+
+a.icon,
+button.icon {
+  color: @charcoal !important;
+}
+
+.nav a.icon {
+  color: @graphite !important;
 }
