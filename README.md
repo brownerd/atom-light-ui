@@ -1,8 +1,7 @@
 # Brownerd UI
 
-This is a minimal syntax that uses typography instead of coloring.
+This is a minimal syntax that uses typographic weight instead of coloring.
 
-*- This is a light syntax theme for Atom*
 
 ## Dependencies
 
